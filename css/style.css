@@ -32,13 +32,14 @@ header {text-align: center;}
 .gnb .gnb_list {margin: 0 var(--base-space); border-radius: var(--size-border);}
 .gnb .img {height: 100%;}
 .gnb .img img {height: inherit;}
-.gnb .color {padding: calc(var(--base-space) * 2);}
+.gnb .color button {padding: calc(var(--base-space) * 2);}
 .gnb .blue {background-color: var(--color-blue);}
 .gnb .pink {background-color: var(--color-pink);}
 .gnb .yellow {background-color: var(--color-yellow);}
 
 main {width: 70%; max-width: 650px; height: 70%; overflow-y: auto;}
-.sale_list .list_item {height: var(--size-button); padding: var(--base-space); border-radius: var(--size-border); background-color: var(--color-white);}
+.sale_list .list_item {display: block; height: var(--size-button); padding: var(--base-space); border-radius: var(--size-border); background-color: var(--color-white);}
+.sale_list .list_item.invisible {display: none;}
 .sale_list .list_item + .list_item {margin-top: calc(var(--base-space) * 2);}
-.sale_list .list_item a {display: flex; align-items: center; width: 100%; height: 100%;}
-.sale_list .list_item img {height: inherit; margin: 0 calc(var(--base-space) * 2);}
+.sale_list .list_item .item_link {display: flex; align-items: center; width: 100%; height: 100%;}
+.sale_list .list_item .thumb {height: inherit; margin: 0 calc(var(--base-space) * 2);}
