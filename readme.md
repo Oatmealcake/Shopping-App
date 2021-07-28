@@ -16,25 +16,30 @@
 <br>버튼을 클릭했을 때 출력되는 화면이다. 현재 티셔츠버튼을 선택해 목록 중 티셔츠인 항목만 보여주고있다.<br><br>
 
 ## 구현 방식
-JSON파일을 이용해 목록을 동적으로 업데이트 할 수 있도록 함
-<br>JSON파일의 내용을 받아오면서 리스트의 li로 변환하는 createHTMLString 함수 사용 -> displayItems 함수를 이용해 기존 ul에 자식으로 추가
-<br>버튼을 누르면 innerHTML에 필터링 된 아이템들을 넣는 대신,
-<br>처음 불러온 innerHTML을 유지하며 display none, block 을 사용해 선택된 것만 보이도록 수정<br>
-```js
-function updateItems(items, key, value) {
-  items.forEach(item => {
-    if (item[key] === value) {
-      findItems(value);
-    }
-  });
-}
+- JSON파일을 이용해 목록을 동적으로 업데이트 할 수 있도록 함
+- JSON파일에서 받아온 items의 항목을 li로 변환하는 createHTMLString 함수 사용 
+<br>→ displayItems 함수를 이용해 기존 ul에 리스트 추가
+- 데이터 속성을 사용해 필터링 기능을 효율적으로 할 수 있도록 함
+  ```js
+  <img src="./img/blue_t.png" alt="tshirt" data-key="type" data-value="tshirt">
+  ```
+- 버튼을 누르면 innerHTML에 필터링 된 아이템들을 넣는 대신,
+<br>처음의 innerHTML을 유지하며 invisible 이라는 클래스를 사용해 display none/block 으로 선택된 것만 보이도록 수정
+  ```js
+  function updateItems(items, key, value) {
+    items.forEach(item => {
+      if (item[key] === value) {
+        showSelectedItems(value);
+      }
+    });
+  }
 
-function findItems(value) {
-  const saleList = document.querySelectorAll('.sale_list > .list_item');
-  
-  saleList.forEach(list => {
-    if (list.querySelector('img').alt.indexOf(value) >= 0) list.classList.remove('invisible');
-    else list.classList.add('invisible');
-  })
-}
-```
+  function showSelectedItems(value) {
+    const saleList = document.querySelectorAll('.sale_list > .list_item');
+    
+    saleList.forEach(list => {
+      if (list.querySelector('img').alt.indexOf(value) >= 0) list.classList.remove('invisible');
+      else list.classList.add('invisible');
+    })
+  }
+  ```
