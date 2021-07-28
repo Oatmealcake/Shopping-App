@@ -38,8 +38,7 @@ header {text-align: center;}
 .gnb .yellow {background-color: var(--color-yellow);}
 
 main {width: 70%; max-width: 650px; height: 70%; overflow-y: auto;}
-.sale_list .list_item {display: block; height: var(--size-button); padding: var(--base-space); border-radius: var(--size-border); background-color: var(--color-white);}
+.sale_list .list_item {display: block; height: var(--size-button); padding: var(--base-space); margin-top: calc(var(--base-space) * 2); border-radius: var(--size-border); background-color: var(--color-white);}
 .sale_list .list_item.invisible {display: none;}
-.sale_list .list_item + .list_item {margin-top: calc(var(--base-space) * 2);}
 .sale_list .list_item .item_link {display: flex; align-items: center; width: 100%; height: 100%;}
 .sale_list .list_item .thumb {height: inherit; margin: 0 calc(var(--base-space) * 2);}
