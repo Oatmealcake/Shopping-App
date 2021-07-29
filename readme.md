@@ -1,4 +1,4 @@
-# Shopping App
+# [Shopping App](https://oatmealcake.github.io/Shopping-App/)
 [드림코딩 쇼핑몰 미니게임](https://academy.dream-coding.com/courses/mini-shopping)을 참고하여 만들어졌습니다.<br><br>
 
 ## 사용 스택
@@ -43,3 +43,6 @@
     })
   }
   ```
+- PWA
+<br>웹과 모바일의 이점을 함께 가지는 웹앱
+<br>[PWAbuilder](https://www.pwabuilder.com/)를 이용
