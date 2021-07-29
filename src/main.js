@@ -26,7 +26,7 @@ function createHTMLString(item) {
   return `
   <li class="list_item">
     <a href="" class="item_link">
-      <img class="thumb" src=${item.image} alt="${item.color} ${item.type}">
+      <img class="thumb" src="${item.image}" alt="${item.color} ${item.type}">
       <span>${item.gender}, ${item.size} size</span>
     </a>
   </li>
